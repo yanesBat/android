@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.karman.ebcard",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "EBCard",
+        "packageName": "com.karman.ebcard",
+        "packageFolder": "com/karman/ebcard",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "gradle",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "NjQ4ZDNiZjMzMjIxZmFmNDE1ZWE2MjJlYTg4NmI2MmEwM2RmYjk4MDUzZTA5ZGNkY2E3MGMwMWQ1NTk2MGRjYTJmNjUzODdiZDg4ZTQ2ZTZhZTFiZGRhZWFkMmM3MTEwOTA1MzQ5YzhmMWI2YzA3ZjI2YmQ4OGY3ODU2NWNhNzc=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "es"]
+    }
+}

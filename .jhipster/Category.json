@@ -1,0 +1,45 @@
+{
+    "name": "Category",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "category",
+            "relationshipName": "subCategory"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "category",
+            "relationshipName": "eBCard"
+        }
+    ],
+    "changelogDate": "20190329204501",
+    "javadoc": "The Category entity.\n@author A true hipster",
+    "entityTableName": "category",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

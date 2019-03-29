@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-eb-card-heading" jhiTranslate="ebCardApp.eBCard.home.createOrEditLabel">Create or edit a EB Card</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!eBCard.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="eBCard.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.firstName" for="field_firstName" [ngbTooltip]="'ebCardApp.eBCard.help.firstName' | translate">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                        [(ngModel)]="eBCard.firstName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.lastName" for="field_lastName" [ngbTooltip]="'ebCardApp.eBCard.help.lastName' | translate">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="eBCard.lastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.title" for="field_title" [ngbTooltip]="'ebCardApp.eBCard.help.title' | translate">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="eBCard.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.subtitle" for="field_subtitle" [ngbTooltip]="'ebCardApp.eBCard.help.subtitle' | translate">Subtitle</label>
+                    <input type="text" class="form-control" name="subtitle" id="field_subtitle"
+                        [(ngModel)]="eBCard.subtitle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.bussinesName" for="field_bussinesName" [ngbTooltip]="'ebCardApp.eBCard.help.bussinesName' | translate">Bussines Name</label>
+                    <input type="text" class="form-control" name="bussinesName" id="field_bussinesName"
+                        [(ngModel)]="eBCard.bussinesName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.occupation" for="field_occupation" [ngbTooltip]="'ebCardApp.eBCard.help.occupation' | translate">Occupation</label>
+                    <input type="text" class="form-control" name="occupation" id="field_occupation"
+                        [(ngModel)]="eBCard.occupation" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.email" for="field_email" [ngbTooltip]="'ebCardApp.eBCard.help.email' | translate">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="eBCard.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.rating" for="field_rating" [ngbTooltip]="'ebCardApp.eBCard.help.rating' | translate">Rating</label>
+                    <input type="number" class="form-control" name="rating" id="field_rating"
+                        [(ngModel)]="eBCard.rating" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.paidPlan" for="field_paidPlan" [ngbTooltip]="'ebCardApp.eBCard.help.paidPlan' | translate">Paid Plan</label>
+                    <select class="form-control" name="paidPlan" [(ngModel)]="eBCard.paidPlan" id="field_paidPlan" >
+                        <option value="BRONCE">{{'ebCardApp.PaidPlan.BRONCE' | translate}}</option>
+                        <option value="SILVER">{{'ebCardApp.PaidPlan.SILVER' | translate}}</option>
+                        <option value="GOLD">{{'ebCardApp.PaidPlan.GOLD' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.imageUrl" for="field_imageUrl" [ngbTooltip]="'ebCardApp.eBCard.help.imageUrl' | translate">Image Url</label>
+                    <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                        [(ngModel)]="eBCard.imageUrl" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.category" for="field_category">Category</label>
+                    <select class="form-control" id="field_category" name="category" [(ngModel)]="eBCard.categoryId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="categoryOption.id" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.eBCard.userPropio" for="field_userPropio">User Propio</label>
+                    <select class="form-control" id="field_userPropio" name="userPropio" [(ngModel)]="eBCard.userPropioId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userPropioOption.id" *ngFor="let userPropioOption of userpropios; trackBy: trackUserPropioById">{{userPropioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

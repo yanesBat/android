@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity UserPropio.
+    -->
+    <changeSet id="20190329204500-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_propio_id"
+                                 baseTableName="user_propio_wallet"
+                                 constraintName="fk_user_propio_wallet_user_propio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_propio"/>
+        <addForeignKeyConstraint baseColumnNames="wallet_id"
+                                 baseTableName="user_propio_wallet"
+                                 constraintName="fk_user_propio_wallet_wallet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="eb_card"/>
+        
+    </changeSet>
+</databaseChangeLog>

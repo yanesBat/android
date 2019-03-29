@@ -1,0 +1,29 @@
+{
+    "ebCardApp": {
+        "phoneNumber": {
+            "home": {
+                "title": "Phone Numbers",
+                "createLabel": "Crear nuevo Phone Number",
+                "createOrEditLabel": "Crear o editar Phone Number"
+            },
+            "created": "Un nuevo Phone Number ha sido creado con el identificador {{ param }}",
+            "updated": "Un Phone Number ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Phone Number ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Phone Number {{ id }}?"
+            },
+            "detail": {
+                "title": "Phone Number"
+            },
+            "number": "Number",
+            "networkOperator": "Network Operator",
+            "hasWhatsapp": "Has Whatsapp",
+            "eBCard": "E B Card",
+            "help": {
+                "number": "fieldName",
+                "networkOperator": "networkOperator",
+                "hasWhatsapp": "asWhatsapp"
+            }
+        }
+    }
+}

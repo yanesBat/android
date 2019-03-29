@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-phone-number-heading" jhiTranslate="ebCardApp.phoneNumber.home.createOrEditLabel">Create or edit a Phone Number</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!phoneNumber.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="phoneNumber.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.phoneNumber.number" for="field_number" [ngbTooltip]="'ebCardApp.phoneNumber.help.number' | translate">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                        [(ngModel)]="phoneNumber.number" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.phoneNumber.networkOperator" for="field_networkOperator" [ngbTooltip]="'ebCardApp.phoneNumber.help.networkOperator' | translate">Network Operator</label>
+                    <select class="form-control" name="networkOperator" [(ngModel)]="phoneNumber.networkOperator" id="field_networkOperator" >
+                        <option value="MOVISTAR">{{'ebCardApp.NetworkOperator.MOVISTAR' | translate}}</option>
+                        <option value="CLARO">{{'ebCardApp.NetworkOperator.CLARO' | translate}}</option>
+                        <option value="CNT">{{'ebCardApp.NetworkOperator.CNT' | translate}}</option>
+                        <option value="TUENTI">{{'ebCardApp.NetworkOperator.TUENTI' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.phoneNumber.hasWhatsapp" for="field_hasWhatsapp" [ngbTooltip]="'ebCardApp.phoneNumber.help.hasWhatsapp' | translate">Has Whatsapp</label>
+                    <input type="checkbox" class="form-control" name="hasWhatsapp" id="field_hasWhatsapp"
+                        [(ngModel)]="phoneNumber.hasWhatsapp" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.phoneNumber.eBCard" for="field_eBCard">E B Card</label>
+                    <select class="form-control" id="field_eBCard" name="eBCard" [(ngModel)]="phoneNumber.eBCardId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="eBCardOption.id" *ngFor="let eBCardOption of ebcards; trackBy: trackEBCardById">{{eBCardOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

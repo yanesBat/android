@@ -1,0 +1,40 @@
+{
+    "name": "PhoneNumber",
+    "fields": [
+        {
+            "fieldName": "number",
+            "javadoc": "fieldName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "networkOperator",
+            "javadoc": "networkOperator",
+            "fieldType": "NetworkOperator",
+            "fieldValues": "MOVISTAR,CLARO,CNT,TUENTI"
+        },
+        {
+            "fieldName": "hasWhatsapp",
+            "javadoc": "asWhatsapp",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "phoneNumber",
+            "relationshipName": "eBCard",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190329204503",
+    "javadoc": "The PhoneNumber entity.\n@author A true hipster",
+    "entityTableName": "phone_number",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

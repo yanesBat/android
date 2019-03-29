@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-review-heading" jhiTranslate="ebCardApp.review.home.createOrEditLabel">Create or edit a Review</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!review.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="review.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.review.rating" for="field_rating" [ngbTooltip]="'ebCardApp.review.help.rating' | translate">Rating</label>
+                    <input type="number" class="form-control" name="rating" id="field_rating"
+                        [(ngModel)]="review.rating" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.review.comment" for="field_comment" [ngbTooltip]="'ebCardApp.review.help.comment' | translate">Comment</label>
+                    <input type="text" class="form-control" name="comment" id="field_comment"
+                        [(ngModel)]="review.comment" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.review.userPropio" for="field_userPropio">User Propio</label>
+                    <select class="form-control" id="field_userPropio" name="userPropio" [(ngModel)]="review.userPropioId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userPropioOption.id" *ngFor="let userPropioOption of userpropios; trackBy: trackUserPropioById">{{userPropioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ebCardApp.review.eBCard" for="field_eBCard">E B Card</label>
+                    <select class="form-control" id="field_eBCard" name="eBCard" [(ngModel)]="review.eBCardId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="eBCardOption.id" *ngFor="let eBCardOption of ebcards; trackBy: trackEBCardById">{{eBCardOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

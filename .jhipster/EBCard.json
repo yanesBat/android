@@ -1,0 +1,113 @@
+{
+    "name": "EBCard",
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "javadoc": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "javadoc": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "javadoc": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subtitle",
+            "javadoc": "subtitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bussinesName",
+            "javadoc": "bussinesName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "occupation",
+            "javadoc": "occupation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "javadoc": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rating",
+            "javadoc": "rating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "paidPlan",
+            "javadoc": "paidPlan",
+            "fieldType": "PaidPlan",
+            "fieldValues": "BRONCE,SILVER,GOLD"
+        },
+        {
+            "fieldName": "imageUrl",
+            "javadoc": "imageUrl",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "review",
+            "otherEntityRelationshipName": "eBCard",
+            "relationshipName": "review"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "socialContact",
+            "otherEntityRelationshipName": "eBCard",
+            "relationshipName": "socialContact"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "phoneNumber",
+            "otherEntityRelationshipName": "eBCard",
+            "relationshipName": "phoneNumber"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "eBCard",
+            "relationshipName": "address"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "eBCard",
+            "relationshipName": "category",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "userPropio",
+            "otherEntityRelationshipName": "wallet",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipName": "userPropio",
+            "otherEntityName": "userPropio",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190329204459",
+    "javadoc": "The EBCard entity.",
+    "entityTableName": "eb_card",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

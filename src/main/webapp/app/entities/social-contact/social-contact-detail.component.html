@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="socialContact">
+            <h2><span jhiTranslate="ebCardApp.socialContact.detail.title">Social Contact</span> {{socialContact.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ebCardApp.socialContact.socialNetwork" [ngbTooltip]="'ebCardApp.socialContact.help.socialNetwork' | translate">Social Network</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ebCardApp.SocialNetwork.' + socialContact.socialNetwork}}">{{socialContact.socialNetwork}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.socialContact.link" [ngbTooltip]="'ebCardApp.socialContact.help.link' | translate">Link</span></dt>
+                <dd>
+                    <span>{{socialContact.link}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.socialContact.eBCard">E B Card</span></dt>
+                <dd>
+                    <div *ngIf="socialContact.eBCardId">
+                        <a [routerLink]="['/eb-card', socialContact.eBCardId, 'view']">{{socialContact.eBCardId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/social-contact', socialContact.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

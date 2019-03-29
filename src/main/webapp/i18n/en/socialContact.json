@@ -1,0 +1,27 @@
+{
+    "ebCardApp": {
+        "socialContact": {
+            "home": {
+                "title": "Social Contacts",
+                "createLabel": "Create a new Social Contact",
+                "createOrEditLabel": "Create or edit a Social Contact"
+            },
+            "created": "A new Social Contact is created with identifier {{ param }}",
+            "updated": "A Social Contact is updated with identifier {{ param }}",
+            "deleted": "A Social Contact is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Social Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Social Contact"
+            },
+            "socialNetwork": "Social Network",
+            "link": "Link",
+            "eBCard": "E B Card",
+            "help": {
+                "socialNetwork": "socialNetwork",
+                "link": "Link"
+            }
+        }
+    }
+}

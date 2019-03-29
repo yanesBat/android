@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userPropio">
+            <h2><span jhiTranslate="ebCardApp.userPropio.detail.title">User Propio</span> {{userPropio.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ebCardApp.userPropio.name">Name</span></dt>
+                <dd>
+                    <span>{{userPropio.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.userPropio.wallet">Wallet</span></dt>
+                <dd>
+                    <span *ngFor="let wallet of userPropio.wallets; let last = last">
+                        <a [routerLink]="['/eb-card', wallet?.id, 'view' ]">{{wallet.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-propio', userPropio.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+    "ebCardApp": {
+        "userPropio": {
+            "home": {
+                "title": "User Propios",
+                "createLabel": "Create a new User Propio",
+                "createOrEditLabel": "Create or edit a User Propio"
+            },
+            "created": "A new User Propio is created with identifier {{ param }}",
+            "updated": "A User Propio is updated with identifier {{ param }}",
+            "deleted": "A User Propio is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete User Propio {{ id }}?"
+            },
+            "detail": {
+                "title": "User Propio"
+            },
+            "name": "Name",
+            "personal": "Personal",
+            "wallet": "Wallet",
+            "review": "Review"
+        }
+    }
+}

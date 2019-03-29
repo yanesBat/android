@@ -1,0 +1,49 @@
+{
+    "ebCardApp": {
+        "eBCard": {
+            "home": {
+                "title": "EB Cards",
+                "createLabel": "Crear nuevo EB Card",
+                "createOrEditLabel": "Crear o editar EB Card"
+            },
+            "created": "Un nuevo EB Card ha sido creado con el identificador {{ param }}",
+            "updated": "Un EB Card ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un EB Card ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar EB Card {{ id }}?"
+            },
+            "detail": {
+                "title": "EB Card"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "title": "Title",
+            "subtitle": "Subtitle",
+            "bussinesName": "Bussines Name",
+            "occupation": "Occupation",
+            "email": "Email",
+            "rating": "Rating",
+            "paidPlan": "Paid Plan",
+            "imageUrl": "Image Url",
+            "review": "Review",
+            "socialContact": "Social Contact",
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "category": "Category",
+            "user": "User",
+            "userPropio": "User Propio",
+            "help": {
+                "firstName": "name",
+                "lastName": "lastName",
+                "title": "title",
+                "subtitle": "subtitle",
+                "bussinesName": "bussinesName",
+                "occupation": "occupation",
+                "email": "email",
+                "rating": "rating",
+                "paidPlan": "paidPlan",
+                "imageUrl": "imageUrl"
+            }
+        }
+    }
+}

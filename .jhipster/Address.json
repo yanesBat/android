@@ -1,0 +1,44 @@
+{
+    "name": "Address",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "javadoc": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latitude",
+            "javadoc": "latitude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitud",
+            "javadoc": "longitud",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "address",
+            "relationshipName": "eBCard",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190329204502",
+    "javadoc": "The Address entity.\n@author A true hipster",
+    "entityTableName": "address",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

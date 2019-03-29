@@ -1,0 +1,41 @@
+{
+    "name": "UserPropio",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "userPropio",
+            "relationshipName": "personal"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "user",
+            "relationshipName": "wallet",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "review",
+            "otherEntityRelationshipName": "userPropio",
+            "relationshipName": "review",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190329204500",
+    "entityTableName": "user_propio",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

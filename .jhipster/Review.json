@@ -1,0 +1,42 @@
+{
+    "name": "Review",
+    "fields": [
+        {
+            "fieldName": "rating",
+            "javadoc": "rating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "comment",
+            "javadoc": "comment",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "userPropio",
+            "otherEntityRelationshipName": "review",
+            "relationshipName": "userPropio",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "review",
+            "relationshipName": "eBCard",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190329204505",
+    "javadoc": "The Review entity.",
+    "entityTableName": "review",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

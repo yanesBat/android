@@ -1,0 +1,12 @@
+{
+    "ebCardApp": {
+        "SocialNetwork": {
+            "null": "",
+            "FACEBOOK": "FACEBOOK",
+            "TWITTER": "TWITTER",
+            "INSTAGRAM": "INSTAGRAM",
+            "LINKEDIN": "LINKEDIN",
+            "YOUTUBE": "YOUTUBE"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="eBCard">
+            <h2><span jhiTranslate="ebCardApp.eBCard.detail.title">EB Card</span> {{eBCard.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ebCardApp.eBCard.firstName" [ngbTooltip]="'ebCardApp.eBCard.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{eBCard.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.lastName" [ngbTooltip]="'ebCardApp.eBCard.help.lastName' | translate">Last Name</span></dt>
+                <dd>
+                    <span>{{eBCard.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.title" [ngbTooltip]="'ebCardApp.eBCard.help.title' | translate">Title</span></dt>
+                <dd>
+                    <span>{{eBCard.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.subtitle" [ngbTooltip]="'ebCardApp.eBCard.help.subtitle' | translate">Subtitle</span></dt>
+                <dd>
+                    <span>{{eBCard.subtitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.bussinesName" [ngbTooltip]="'ebCardApp.eBCard.help.bussinesName' | translate">Bussines Name</span></dt>
+                <dd>
+                    <span>{{eBCard.bussinesName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.occupation" [ngbTooltip]="'ebCardApp.eBCard.help.occupation' | translate">Occupation</span></dt>
+                <dd>
+                    <span>{{eBCard.occupation}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.email" [ngbTooltip]="'ebCardApp.eBCard.help.email' | translate">Email</span></dt>
+                <dd>
+                    <span>{{eBCard.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.rating" [ngbTooltip]="'ebCardApp.eBCard.help.rating' | translate">Rating</span></dt>
+                <dd>
+                    <span>{{eBCard.rating}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.paidPlan" [ngbTooltip]="'ebCardApp.eBCard.help.paidPlan' | translate">Paid Plan</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ebCardApp.PaidPlan.' + eBCard.paidPlan}}">{{eBCard.paidPlan}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.imageUrl" [ngbTooltip]="'ebCardApp.eBCard.help.imageUrl' | translate">Image Url</span></dt>
+                <dd>
+                    <span>{{eBCard.imageUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="eBCard.categoryId">
+                        <a [routerLink]="['/category', eBCard.categoryId, 'view']">{{eBCard.categoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ebCardApp.eBCard.userPropio">User Propio</span></dt>
+                <dd>
+                    <div *ngIf="eBCard.userPropioId">
+                        <a [routerLink]="['/user-propio', eBCard.userPropioId, 'view']">{{eBCard.userPropioId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/eb-card', eBCard.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

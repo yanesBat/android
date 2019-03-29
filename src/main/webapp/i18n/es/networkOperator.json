@@ -1,0 +1,11 @@
+{
+    "ebCardApp": {
+        "NetworkOperator": {
+            "null": "",
+            "MOVISTAR": "MOVISTAR",
+            "CLARO": "CLARO",
+            "CNT": "CNT",
+            "TUENTI": "TUENTI"
+        }
+    }
+}

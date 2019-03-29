@@ -1,0 +1,35 @@
+{
+    "name": "SocialContact",
+    "fields": [
+        {
+            "fieldName": "socialNetwork",
+            "javadoc": "socialNetwork",
+            "fieldType": "SocialNetwork",
+            "fieldValues": "FACEBOOK,TWITTER,INSTAGRAM,LINKEDIN,YOUTUBE"
+        },
+        {
+            "fieldName": "link",
+            "javadoc": "Link",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "eBCard",
+            "otherEntityRelationshipName": "socialContact",
+            "relationshipName": "eBCard",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190329204504",
+    "javadoc": "The SocialContact entity.\n@author A true hipster",
+    "entityTableName": "social_contact",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ebCardApp.eBCard.home.title">EB Cards</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-eb-card" [routerLink]="['/eb-card/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ebCardApp.eBCard.home.createLabel">
+            Create new EB Card
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="eBCards">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="ebCardApp.eBCard.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="ebCardApp.eBCard.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="title"><span jhiTranslate="ebCardApp.eBCard.title">Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="subtitle"><span jhiTranslate="ebCardApp.eBCard.subtitle">Subtitle</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bussinesName"><span jhiTranslate="ebCardApp.eBCard.bussinesName">Bussines Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="occupation"><span jhiTranslate="ebCardApp.eBCard.occupation">Occupation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="ebCardApp.eBCard.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rating"><span jhiTranslate="ebCardApp.eBCard.rating">Rating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="paidPlan"><span jhiTranslate="ebCardApp.eBCard.paidPlan">Paid Plan</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imageUrl"><span jhiTranslate="ebCardApp.eBCard.imageUrl">Image Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="categoryId"><span jhiTranslate="ebCardApp.eBCard.category">Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="userPropioId"><span jhiTranslate="ebCardApp.eBCard.userPropio">User Propio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let eBCard of eBCards ;trackBy: trackId">
+                <td><a [routerLink]="['/eb-card', eBCard.id, 'view' ]">{{eBCard.id}}</a></td>
+                <td>{{eBCard.firstName}}</td>
+                <td>{{eBCard.lastName}}</td>
+                <td>{{eBCard.title}}</td>
+                <td>{{eBCard.subtitle}}</td>
+                <td>{{eBCard.bussinesName}}</td>
+                <td>{{eBCard.occupation}}</td>
+                <td>{{eBCard.email}}</td>
+                <td>{{eBCard.rating}}</td>
+                <td jhiTranslate="{{'ebCardApp.PaidPlan.' + eBCard.paidPlan}}">{{eBCard.paidPlan}}</td>
+                <td>{{eBCard.imageUrl}}</td>
+                <td>
+                    <div *ngIf="eBCard.categoryId">
+                        <a [routerLink]="['../category', eBCard.categoryId , 'view' ]" >{{eBCard.categoryId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="eBCard.userPropioId">
+                        <a [routerLink]="['../user-propio', eBCard.userPropioId , 'view' ]" >{{eBCard.userPropioId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/eb-card', eBCard.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/eb-card', eBCard.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'eb-card', { outlets: { popup: eBCard.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
